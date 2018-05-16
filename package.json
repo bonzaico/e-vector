@@ -1,0 +1,19 @@
+{
+  "name": "e-vector",
+  "version": "0.1.0",
+  "description": "A 2D or 3D Euclidean vector library for Node.js and the browser.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "keywords": [
+    "vector",
+    "maths"
+  ],
+  "license": "BSD-3-Clause",
+  "devDependencies": {
+    "daggy": "^1.2.0",
+    "eslint": "^4.19.1",
+    "flow-bin": "^0.72.0"
+  }
+}
