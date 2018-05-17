@@ -2,7 +2,7 @@
   "name": "e-vector",
   "version": "0.1.0",
   "description": "A 2D or 3D Euclidean vector library for Node.js and the browser.",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "rollup -c",
     "test": "rollup -c rollup.test.config.js | node | tap-spec",
