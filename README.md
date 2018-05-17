@@ -283,4 +283,4 @@ Returns **[Vector](#vector)** The projected vector.
 
 ## License
 
-See [LICENSE.md](https://github.com/bonzaico/e-vector/LICENSE.md)
+See [LICENSE.md](https://github.com/bonzaico/e-vector/blob/master/LICENSE.md)
