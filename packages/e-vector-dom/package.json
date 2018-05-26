@@ -1,0 +1,21 @@
+{
+  "name": "e-vector-dom",
+  "version": "0.1.0",
+  "description": "Vector utilities to work with DOM elements.",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "unpkg": "dist/index/.umd.min.js",
+  "files": [
+    "src",
+    "dist/*.js"
+  ],
+  "keywords": [
+    "vector",
+    "maths"
+  ],
+  "license": "BSD-3-Clause",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bonzaico/e-vector.git"
+  }
+}
