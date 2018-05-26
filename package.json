@@ -1,27 +1,9 @@
 {
-  "name": "e-vector",
-  "version": "0.1.0",
-  "description": "A 2D or 3D Euclidean vector library for Node.js and the browser.",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
-  "unpkg": "dist/index/.umd.min.js",
-  "files": [
-    "src",
-    "dist/*.js"
-  ],
+  "private": true,
   "scripts": {
-    "build": "rollup -c",
+    "build": "npm run docs && rollup -c",
     "test": "rollup -c rollup.test.config.js | node | tap-spec",
-    "docs": "documentation build src/vector.js -f md > API.md"
-  },
-  "keywords": [
-    "vector",
-    "maths"
-  ],
-  "license": "BSD-3-Clause",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/bonzaico/e-vector.git"
+    "docs": "documentation readme src/vector.js -s \"API Docs\" --github"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -34,6 +16,7 @@
     "eslint": "^4.19.1",
     "flow-bin": "^0.72.0",
     "jsverify": "^0.8.3",
+    "lerna": "^2.11.0",
     "ramda": "^0.25.0",
     "rollup": "^0.59.1",
     "rollup-plugin-babel": "^3.0.4",

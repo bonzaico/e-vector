@@ -35,10 +35,14 @@ Install using `npm`,
     -   [setMag](#setmag)
     -   [heading](#heading)
     -   [project](#project)
+    -   [round](#round)
+    -   [ceil](#ceil)
+    -   [floor](#floor)
+    -   [abs](#abs)
 
 ### Vector
 
-[src/vector.js:38-42](https://github.com/bonzaico/e-vector/blob/a2ce5004e54448cc6f18611b793227b2628a6be3/src/vector.js#L38-L42 "Source code on GitHub")
+[src/vector.js:38-42](https://github.com/bonzaico/e-vector/blob/a2f91cf584b875d932ed9eac1132387ba4dd524e/src/vector.js#L38-L42 "Source code on GitHub")
 
 Create a vector by specifying its components.
 
@@ -59,7 +63,7 @@ Returns **[Vector](#vector)**
 
 #### copy
 
-[src/vector.js:57-57](https://github.com/bonzaico/e-vector/blob/a2ce5004e54448cc6f18611b793227b2628a6be3/src/vector.js#L57-L57 "Source code on GitHub")
+[src/vector.js:57-57](https://github.com/bonzaico/e-vector/blob/a2f91cf584b875d932ed9eac1132387ba4dd524e/src/vector.js#L57-L57 "Source code on GitHub")
 
 Create a copy of the given vector.
 
@@ -80,7 +84,7 @@ Returns **[Vector](#vector)** A vector with the same components as the given vec
 
 #### fromAngle
 
-[src/vector.js:70-70](https://github.com/bonzaico/e-vector/blob/a2ce5004e54448cc6f18611b793227b2628a6be3/src/vector.js#L70-L70 "Source code on GitHub")
+[src/vector.js:70-70](https://github.com/bonzaico/e-vector/blob/a2f91cf584b875d932ed9eac1132387ba4dd524e/src/vector.js#L70-L70 "Source code on GitHub")
 
 Create a new _2D_ unit vector from the given angle (in radians).
 
@@ -99,7 +103,7 @@ Returns **[Vector](#vector)** A new vector with heading equal to given angle and
 
 #### equals
 
-[src/vector.js:89-89](https://github.com/bonzaico/e-vector/blob/a2ce5004e54448cc6f18611b793227b2628a6be3/src/vector.js#L89-L89 "Source code on GitHub")
+[src/vector.js:89-89](https://github.com/bonzaico/e-vector/blob/a2f91cf584b875d932ed9eac1132387ba4dd524e/src/vector.js#L89-L89 "Source code on GitHub")
 
 Check the equality of two vectors.
 
@@ -119,7 +123,7 @@ Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/
 
 #### mag
 
-[src/vector.js:97-97](https://github.com/bonzaico/e-vector/blob/a2ce5004e54448cc6f18611b793227b2628a6be3/src/vector.js#L97-L97 "Source code on GitHub")
+[src/vector.js:97-97](https://github.com/bonzaico/e-vector/blob/a2f91cf584b875d932ed9eac1132387ba4dd524e/src/vector.js#L97-L97 "Source code on GitHub")
 
 Compute the magnitude of the vector.
 
@@ -131,7 +135,7 @@ Returns **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/G
 
 #### magSq
 
-[src/vector.js:105-105](https://github.com/bonzaico/e-vector/blob/a2ce5004e54448cc6f18611b793227b2628a6be3/src/vector.js#L105-L105 "Source code on GitHub")
+[src/vector.js:105-105](https://github.com/bonzaico/e-vector/blob/a2f91cf584b875d932ed9eac1132387ba4dd524e/src/vector.js#L105-L105 "Source code on GitHub")
 
 Compute the square of magnitude of the vector.
 
@@ -143,7 +147,7 @@ Returns **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/G
 
 #### add
 
-[src/vector.js:114-114](https://github.com/bonzaico/e-vector/blob/a2ce5004e54448cc6f18611b793227b2628a6be3/src/vector.js#L114-L114 "Source code on GitHub")
+[src/vector.js:114-114](https://github.com/bonzaico/e-vector/blob/a2f91cf584b875d932ed9eac1132387ba4dd524e/src/vector.js#L114-L114 "Source code on GitHub")
 
 Add two vectors.
 
@@ -156,7 +160,7 @@ Returns **[Vector](#vector)** Resultant vector.
 
 #### sub
 
-[src/vector.js:123-125](https://github.com/bonzaico/e-vector/blob/a2ce5004e54448cc6f18611b793227b2628a6be3/src/vector.js#L123-L125 "Source code on GitHub")
+[src/vector.js:123-125](https://github.com/bonzaico/e-vector/blob/a2f91cf584b875d932ed9eac1132387ba4dd524e/src/vector.js#L123-L125 "Source code on GitHub")
 
 Subtract the second vector from the first.
 
@@ -169,7 +173,7 @@ Returns **[Vector](#vector)** Vector result of **_`v`_** `-` **_`u`_**.
 
 #### mult
 
-[src/vector.js:134-134](https://github.com/bonzaico/e-vector/blob/a2ce5004e54448cc6f18611b793227b2628a6be3/src/vector.js#L134-L134 "Source code on GitHub")
+[src/vector.js:134-134](https://github.com/bonzaico/e-vector/blob/a2f91cf584b875d932ed9eac1132387ba4dd524e/src/vector.js#L134-L134 "Source code on GitHub")
 
 Multiply the vector with a scalar.
 
@@ -182,7 +186,7 @@ Returns **[Vector](#vector)** The resultant vector.
 
 #### div
 
-[src/vector.js:143-146](https://github.com/bonzaico/e-vector/blob/a2ce5004e54448cc6f18611b793227b2628a6be3/src/vector.js#L143-L146 "Source code on GitHub")
+[src/vector.js:143-146](https://github.com/bonzaico/e-vector/blob/a2f91cf584b875d932ed9eac1132387ba4dd524e/src/vector.js#L143-L146 "Source code on GitHub")
 
 Divide the vector with a scalar.
 
@@ -195,7 +199,7 @@ Returns **[Vector](#vector)** If the scalar is `0`, return `Vector(0, 0)`, else 
 
 #### dist
 
-[src/vector.js:155-157](https://github.com/bonzaico/e-vector/blob/a2ce5004e54448cc6f18611b793227b2628a6be3/src/vector.js#L155-L157 "Source code on GitHub")
+[src/vector.js:155-157](https://github.com/bonzaico/e-vector/blob/a2f91cf584b875d932ed9eac1132387ba4dd524e/src/vector.js#L155-L157 "Source code on GitHub")
 
 Compute euclidean distance between two vectors.
 
@@ -208,7 +212,7 @@ Returns **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/G
 
 #### dot
 
-[src/vector.js:167-167](https://github.com/bonzaico/e-vector/blob/a2ce5004e54448cc6f18611b793227b2628a6be3/src/vector.js#L167-L167 "Source code on GitHub")
+[src/vector.js:167-167](https://github.com/bonzaico/e-vector/blob/a2f91cf584b875d932ed9eac1132387ba4dd524e/src/vector.js#L167-L167 "Source code on GitHub")
 
 Compute the dot product of two vectors.
 
@@ -221,7 +225,7 @@ Returns **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/G
 
 #### cross
 
-[src/vector.js:177-182](https://github.com/bonzaico/e-vector/blob/a2ce5004e54448cc6f18611b793227b2628a6be3/src/vector.js#L177-L182 "Source code on GitHub")
+[src/vector.js:177-182](https://github.com/bonzaico/e-vector/blob/a2f91cf584b875d932ed9eac1132387ba4dd524e/src/vector.js#L177-L182 "Source code on GitHub")
 
 Compute the cross product of two vectors. _Only defined for three dimensional vectors_.
 
@@ -234,7 +238,7 @@ Returns **[Vector](#vector)** The result of **_`u`_** `×` **_`v`_**.
 
 #### normalize
 
-[src/vector.js:190-190](https://github.com/bonzaico/e-vector/blob/a2ce5004e54448cc6f18611b793227b2628a6be3/src/vector.js#L190-L190 "Source code on GitHub")
+[src/vector.js:190-190](https://github.com/bonzaico/e-vector/blob/a2f91cf584b875d932ed9eac1132387ba4dd524e/src/vector.js#L190-L190 "Source code on GitHub")
 
 Change the maagnitude/length of the vector to 1 without changing its angle/direction.
 
@@ -246,7 +250,7 @@ Returns **[Vector](#vector)** Vector with magnitude of 1 and direction same as *
 
 #### setMag
 
-[src/vector.js:199-199](https://github.com/bonzaico/e-vector/blob/a2ce5004e54448cc6f18611b793227b2628a6be3/src/vector.js#L199-L199 "Source code on GitHub")
+[src/vector.js:199-199](https://github.com/bonzaico/e-vector/blob/a2f91cf584b875d932ed9eac1132387ba4dd524e/src/vector.js#L199-L199 "Source code on GitHub")
 
 Set the magnitude/length of the vector without changing its angle/direction.
 
@@ -259,7 +263,7 @@ Returns **[Vector](#vector)** A new vector with magnitude of m and direction sam
 
 #### heading
 
-[src/vector.js:207-207](https://github.com/bonzaico/e-vector/blob/a2ce5004e54448cc6f18611b793227b2628a6be3/src/vector.js#L207-L207 "Source code on GitHub")
+[src/vector.js:207-207](https://github.com/bonzaico/e-vector/blob/a2f91cf584b875d932ed9eac1132387ba4dd524e/src/vector.js#L207-L207 "Source code on GitHub")
 
 Compure the direction/angle of the vector in radians.
 
@@ -271,7 +275,7 @@ Returns **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/G
 
 #### project
 
-[src/vector.js:216-218](https://github.com/bonzaico/e-vector/blob/a2ce5004e54448cc6f18611b793227b2628a6be3/src/vector.js#L216-L218 "Source code on GitHub")
+[src/vector.js:216-218](https://github.com/bonzaico/e-vector/blob/a2f91cf584b875d932ed9eac1132387ba4dd524e/src/vector.js#L216-L218 "Source code on GitHub")
 
 Returns the projection of the second vection onto the first.
 
@@ -280,6 +284,86 @@ Returns the projection of the second vection onto the first.
 -   `on` **[Vector](#vector)** The vector on which the second vector will be projected.
 
 Returns **[Vector](#vector)** The projected vector.
+
+#### round
+
+[src/vector.js:232-232](https://github.com/bonzaico/e-vector/blob/a2f91cf584b875d932ed9eac1132387ba4dd524e/src/vector.js#L232-L232 "Source code on GitHub")
+
+Returns new vector with rounded components.
+
+**Parameters**
+
+-   `u` **[Vector](#vector)** 
+
+**Examples**
+
+```javascript
+var u = Vector(10.2, 10.9);
+var roundedVector = Vector.round(u);
+console.log(roundedVector); // Vector(10, 11)
+```
+
+Returns **[Vector](#vector)** v
+
+#### ceil
+
+[src/vector.js:246-246](https://github.com/bonzaico/e-vector/blob/a2f91cf584b875d932ed9eac1132387ba4dd524e/src/vector.js#L246-L246 "Source code on GitHub")
+
+Returns new vector with the nearest non-fractional values for the components.
+
+**Parameters**
+
+-   `u` **[Vector](#vector)** 
+
+**Examples**
+
+```javascript
+var u = Vector(10.2, 10.9);
+var ceilVector = Vector.ceil(u);
+console.log(ceilVector); // Vector(11, 11)
+```
+
+Returns **[Vector](#vector)** v
+
+#### floor
+
+[src/vector.js:260-260](https://github.com/bonzaico/e-vector/blob/a2f91cf584b875d932ed9eac1132387ba4dd524e/src/vector.js#L260-L260 "Source code on GitHub")
+
+Returns new vector with the nearest smaller non-fractional values for the components.
+
+**Parameters**
+
+-   `u` **[Vector](#vector)** 
+
+**Examples**
+
+```javascript
+var u = Vector(10.2, 10.9);
+var floorVector = Vector.floor(u);
+console.log(floorVector); // Vector(10, 10)
+```
+
+Returns **[Vector](#vector)** v
+
+#### abs
+
+[src/vector.js:274-274](https://github.com/bonzaico/e-vector/blob/a2f91cf584b875d932ed9eac1132387ba4dd524e/src/vector.js#L274-L274 "Source code on GitHub")
+
+Returns new vector with the absolute values for the components.
+
+**Parameters**
+
+-   `u` **[Vector](#vector)** 
+
+**Examples**
+
+```javascript
+var u = Vector(-5, 10);
+var absVector = Vector.abs(u);
+console.log(absVector); // Vector(5, 10)
+```
+
+Returns **[Vector](#vector)** v
 
 ## License
 

@@ -2,7 +2,7 @@
 
 import U from "./utils";
 
-const RAD_TO_DEG = 360 / (2 * Math.PI);
+export const RAD_TO_DEG = 360 / (2 * Math.PI);
 
 class VectorT {
     x: number
@@ -35,7 +35,7 @@ class VectorT {
  * const v = Vector(3, 4);
  * const u = Vector(3, 4, 5);
  */
-const Vector = (function () {
+export const Vector = (function () {
     return (x: number, y: number, z?: number) => {
         return new VectorT(x, y, z);
     }
@@ -54,7 +54,7 @@ const Vector = (function () {
  * 
  * u.toString(); // Vector(3, 4, 0)
  */
-Vector.copy = (v: VectorT): VectorT => Vector(v.x, v.y, v.z);
+export const copy = (v: VectorT): VectorT => Vector(v.x, v.y, v.z);
 
 /**
  * Create a new _2D_ unit vector from the given angle (in radians).
@@ -67,7 +67,7 @@ Vector.copy = (v: VectorT): VectorT => Vector(v.x, v.y, v.z);
  * var v = Vector.fromAngle(Math.atan2(4, 3));
  * v.toString(); // Vector(0.6, 0.8, 0)
  */
-Vector.fromAngle = (angle: number): VectorT => Vector(Math.cos(angle), Math.sin(angle));
+export const fromAngle = (angle: number): VectorT => Vector(Math.cos(angle), Math.sin(angle));
 
 /**
  * Check the equality of two vectors.
@@ -86,7 +86,7 @@ Vector.fromAngle = (angle: number): VectorT => Vector(Math.cos(angle), Math.sin(
  * Vector.equals(u, w); // true
  * u === w; // false
  */
-Vector.equals = U.curry((v: VectorT, o: VectorT): boolean => (v.x === o.x && v.y === o.y && v.z === o.z));
+export const equals = U.curry((v: VectorT, o: VectorT): boolean => (v.x === o.x && v.y === o.y && v.z === o.z));
 
 /**
  * Compute the magnitude of the vector.
@@ -94,7 +94,7 @@ Vector.equals = U.curry((v: VectorT, o: VectorT): boolean => (v.x === o.x && v.y
  * @param {Vector} v
  * @returns {number} Magnitude of the given vector.
  */
-Vector.mag = (v: VectorT): number => Math.sqrt(v.x * v.x + v.y * v.y + v.z * v.z);
+export const mag = (v: VectorT): number => Math.sqrt(v.x * v.x + v.y * v.y + v.z * v.z);
 
 /**
  * Compute the square of magnitude of the vector.
@@ -102,7 +102,7 @@ Vector.mag = (v: VectorT): number => Math.sqrt(v.x * v.x + v.y * v.y + v.z * v.z
  * @param {Vector} v
  * @returns {number} Square of magnitude of the given vector.
  */
-Vector.magSq = (v: VectorT): number => (v.x * v.x + v.y * v.y + v.z * v.z); 
+export const magSq = (v: VectorT): number => (v.x * v.x + v.y * v.y + v.z * v.z); 
 
 /**
  * Add two vectors.
@@ -111,7 +111,7 @@ Vector.magSq = (v: VectorT): number => (v.x * v.x + v.y * v.y + v.z * v.z);
  * @param {Vector} u
  * @returns {Vector} Resultant vector.
  */
-Vector.add = U.curry((v: VectorT, o: VectorT): VectorT => Vector(v.x + o.x, v.y + o.y, v.z + o.z));
+export const add = U.curry((v: VectorT, o: VectorT): VectorT => Vector(v.x + o.x, v.y + o.y, v.z + o.z));
 
 /**
  * Subtract the second vector from the first.
@@ -120,7 +120,7 @@ Vector.add = U.curry((v: VectorT, o: VectorT): VectorT => Vector(v.x + o.x, v.y 
  * @param {Vector} u
  * @returns {Vector} Vector result of **_`v`_** `-` **_`u`_**.
  */
-Vector.sub = U.curry((v: VectorT, o: VectorT): VectorT =>
+export const sub = U.curry((v: VectorT, o: VectorT): VectorT =>
     Vector(v.x - o.x, v.y - o.y, v.z - o.z)
 );
 
@@ -131,7 +131,7 @@ Vector.sub = U.curry((v: VectorT, o: VectorT): VectorT =>
  * @param {Vector} v The vector
  * @returns {Vector} The resultant vector.
  */
-Vector.mult = U.curry((n: number, v: VectorT): VectorT => Vector(v.x * n, v.y * n, v.z * n));
+export const mult = U.curry((n: number, v: VectorT): VectorT => Vector(v.x * n, v.y * n, v.z * n));
 
 /**
  * Divide the vector with a scalar.
@@ -140,7 +140,7 @@ Vector.mult = U.curry((n: number, v: VectorT): VectorT => Vector(v.x * n, v.y * 
  * @param {Vector} v The vector
  * @returns {Vector} If the scalar is `0`, return `Vector(0, 0)`, else compute the vector.
  */
-Vector.div = U.curry(
+export const div = U.curry(
     (n: number, v: VectorT): VectorT =>
         n === 0 ? Vector(0, 0) : Vector(v.x / n, v.y / n, v.z / n)
 );
@@ -152,7 +152,7 @@ Vector.div = U.curry(
  * @param {Vector} u
  * @returns {number} The distance between **_`v`_** and **_`u`_**.
  */
-Vector.dist = U.curry((v: VectorT, o: VectorT): number =>
+export const dist = U.curry((v: VectorT, o: VectorT): number =>
     Math.sqrt(Math.pow(v.x - o.x, 2) + Math.pow(v.y - o.y, 2) + Math.pow(v.z - o.z, 2))
 );
 
@@ -164,7 +164,7 @@ Vector.dist = U.curry((v: VectorT, o: VectorT): number =>
  * @param {Vector} v
  * @returns {number} The result of **_`u`_**` ⋅ `**_`v`_**.
  */
-Vector.dot = U.curry((v: VectorT, o: VectorT) => v.x * o.x + v.y * o.y + v.z * o.z);
+export const dot = U.curry((v: VectorT, o: VectorT) => v.x * o.x + v.y * o.y + v.z * o.z);
 
 /**
  * Compute the cross product of two vectors. _Only defined for three dimensional vectors_.
@@ -174,7 +174,7 @@ Vector.dot = U.curry((v: VectorT, o: VectorT) => v.x * o.x + v.y * o.y + v.z * o
  * @param {Vector} v
  * @returns {Vector} The result of **_`u`_** `×` **_`v`_**.
  */
-Vector.cross = U.curry((v: VectorT, o: VectorT) =>
+export const cross = U.curry((v: VectorT, o: VectorT) =>
     Vector(
         v.y * o.z - v.z * o.y,
         v.x * o.z - v.z * o.x,
@@ -187,7 +187,7 @@ Vector.cross = U.curry((v: VectorT, o: VectorT) =>
  * @param {Vector} u 
  * @returns {Vector} Vector with magnitude of 1 and direction same as **_`u`_**.
  */
-Vector.normalize = (u: VectorT) => Vector.div(Vector.mag(u), u);
+export const normalize = (u: VectorT) => Vector.div(Vector.mag(u), u);
 
 /**
  * Set the magnitude/length of the vector without changing its angle/direction.
@@ -196,7 +196,7 @@ Vector.normalize = (u: VectorT) => Vector.div(Vector.mag(u), u);
  * @param {Vector} u The vector
  * @returns {Vector} A new vector with magnitude of m and direction same as **_`u`_**.
  */
-Vector.setMag = U.curry((m: number, u: VectorT) => Vector.mult(m / Vector.mag(u), u));
+export const setMag = U.curry((m: number, u: VectorT) => Vector.mult(m / Vector.mag(u), u));
 
 /**
  * Compure the direction/angle of the vector in radians.
@@ -204,7 +204,7 @@ Vector.setMag = U.curry((m: number, u: VectorT) => Vector.mult(m / Vector.mag(u)
  * @param {Vector} u 
  * @returns {number} Angle in radians
  */
-Vector.heading = (u: VectorT) => Math.atan2(u.y, u.x);
+export const heading = (u: VectorT) => Math.atan2(u.y, u.x);
 
 /**
  * Returns the projection of the second vection onto the first.
@@ -213,11 +213,67 @@ Vector.heading = (u: VectorT) => Math.atan2(u.y, u.x);
  * @params {Vector} v Project this vector.
  * @returns {Vector} The projected vector.
  */
-Vector.project = U.curry((on: VectorT, v: VectorT) => Vector.mult(
+export const project = U.curry((on: VectorT, v: VectorT) => Vector.mult(
     Vector.dot(on, v) / Vector.magSq(on)
 ));
 
-Vector.inRectangle = U.curry((position: VectorT, size: VectorT, point: VectorT) => {
+/**
+ * Returns new vector with rounded components.
+ * 
+ * @param {Vector} u
+ * @returns {Vector} v
+ * 
+ * @example
+ * 
+ * var u = Vector(10.2, 10.9);
+ * var roundedVector = Vector.round(u);
+ * console.log(roundedVector); // Vector(10, 11)
+ */
+export const round = ((u: VectorT) => Vector(Math.round(u.x), Math.round(u.y), Math.round(u.z)));
+
+/**
+ * Returns new vector with the nearest non-fractional values for the components.
+ * 
+ * @param {Vector} u
+ * @returns {Vector} v
+ * 
+ * @example
+ * 
+ * var u = Vector(10.2, 10.9);
+ * var ceilVector = Vector.ceil(u);
+ * console.log(ceilVector); // Vector(11, 11)
+ */
+export const ceil = ((u: VectorT) => Vector(Math.ceil(u.x), Math.ceil(u.y), Math.ceil(u.z)));
+
+/**
+ * Returns new vector with the nearest smaller non-fractional values for the components.
+ * 
+ * @param {Vector} u
+ * @returns {Vector} v
+ * 
+ * @example
+ * 
+ * var u = Vector(10.2, 10.9);
+ * var floorVector = Vector.floor(u);
+ * console.log(floorVector); // Vector(10, 10)
+ */
+export const floor = ((u: VectorT) => Vector(Math.floor(u.x), Math.floor(u.y), Math.floor(u.z)));
+
+/**
+ * Returns new vector with the absolute values for the components.
+ * 
+ * @param {Vector} u
+ * @returns {Vector} v
+ * 
+ * @example
+ * 
+ * var u = Vector(-5, 10);
+ * var absVector = Vector.abs(u);
+ * console.log(absVector); // Vector(5, 10)
+ */
+export const abs = ((u: VectorT) => Vector(Math.abs(u.x), Math.abs(u.y), Math.abs(u.z)));
+
+export const inRectangle = U.curry((position: VectorT, size: VectorT, point: VectorT) => {
     const bottomRight = Vector.add(position, size);
     return (
         point.x >= position.x &&
@@ -226,6 +282,3 @@ Vector.inRectangle = U.curry((position: VectorT, size: VectorT, point: VectorT) 
         point.y < bottomRight.y
     );
 });
-
-export default Vector;
-
