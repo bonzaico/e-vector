@@ -7,7 +7,7 @@
   "unpkg": "dist/index.umd.min.js",
   "scripts": {
     "test": "rollup -c ../../rollup.test.config.js | node | tap-spec",
-    "docs": "documentation readme src/vector.js -s \"API Docs\" --github --readme-file README.md"
+    "docs": "documentation readme src/e-vector.js -s \"API Docs\" --github --readme-file README.md"
   },
   "files": [
     "src",
