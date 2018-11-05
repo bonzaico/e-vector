@@ -1,9 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "build": "npm run docs && rollup -c",
-    "test": "rollup -c rollup.test.config.js | node | tap-spec",
-    "docs": "documentation readme src/vector.js -s \"API Docs\" --github"
+    "build": "lerna build",
+    "lint": "lerna lint"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -14,6 +13,7 @@
     "daggy": "^1.2.0",
     "documentation": "^6.3.3",
     "eslint": "^4.19.1",
+    "eslint-config-bonzai": "^1.0.0",
     "flow-bin": "^0.72.0",
     "jsverify": "^0.8.3",
     "lerna": "^2.11.0",

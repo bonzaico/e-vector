@@ -1,0 +1,29 @@
+{
+  "name": "e-vector-fl",
+  "version": "1.0.0",
+  "description": "A 2D or 3D Euclidean vector library for Node.js and the browser with Fantasy Land support.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bonzaico/e-vector.git"
+  },
+  "keywords": [
+    "vector",
+    "maths"
+  ],
+  "author": "",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/bonzaico/e-vector/issues"
+  },
+  "homepage": "https://github.com/bonzaico/e-vector#readme",
+  "dependencies": {
+    "fantasy-land": "^3.5.0"
+  }
+}

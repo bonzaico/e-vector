@@ -1,25 +1,9 @@
 /* @flow */
 
 import U from "./utils";
+import { Vector as VectorT } from "../../vector";
 
 export const RAD_TO_DEG = 360 / (2 * Math.PI);
-
-class VectorT {
-    x: number
-    y: number
-    z: number
-
-    constructor (x: number, y: number, z?: number) {
-        var obj = this;
-        obj.x = x;
-        obj.y = y;
-        obj.z = z != null ? z : 0;
-    }
-
-    toString () {
-        return `Vector(${this.x}, ${this.y}, ${this.z})`
-    }
-}
 
 /**
  * Create a vector by specifying its components.
@@ -131,7 +115,7 @@ export const sub = U.curry((v: VectorT, o: VectorT): VectorT =>
  * @param {Vector} v The vector
  * @returns {Vector} The resultant vector.
  */
-export const mult = U.curry((n: number, v: VectorT): VectorT => Vector(v.x * n, v.y * n, v.z * n));
+export const mul = U.curry((n: number, v: VectorT): VectorT => Vector(v.x * n, v.y * n, v.z * n));
 
 /**
  * Divide the vector with a scalar.
@@ -182,7 +166,7 @@ export const cross = U.curry((v: VectorT, o: VectorT) =>
     ));
 
 /**
- * Change the maagnitude/length of the vector to 1 without changing its angle/direction.
+ * Change the magnitude/length of the vector to 1 without changing its angle/direction.
  * 
  * @param {Vector} u 
  * @returns {Vector} Vector with magnitude of 1 and direction same as **_`u`_**.
@@ -196,10 +180,10 @@ export const normalize = (u: VectorT) => Vector.div(Vector.mag(u), u);
  * @param {Vector} u The vector
  * @returns {Vector} A new vector with magnitude of m and direction same as **_`u`_**.
  */
-export const setMag = U.curry((m: number, u: VectorT) => Vector.mult(m / Vector.mag(u), u));
+export const setMag = U.curry((m: number, u: VectorT) => Vector.mul(m / Vector.mag(u), u));
 
 /**
- * Compure the direction/angle of the vector in radians.
+ * Compute the direction/angle of the vector in radians.
  *
  * @param {Vector} u 
  * @returns {number} Angle in radians
@@ -207,18 +191,18 @@ export const setMag = U.curry((m: number, u: VectorT) => Vector.mult(m / Vector.
 export const heading = (u: VectorT) => Math.atan2(u.y, u.x);
 
 /**
- * Returns the projection of the second vection onto the first.
+ * Returns the projection of the second vector onto the first.
  *
  * @param {Vector} on The vector on which the second vector will be projected.
  * @params {Vector} v Project this vector.
  * @returns {Vector} The projected vector.
  */
-export const project = U.curry((on: VectorT, v: VectorT) => Vector.mult(
+export const project = U.curry((on: VectorT, v: VectorT) => Vector.mul(
     Vector.dot(on, v) / Vector.magSq(on)
 ));
 
 /**
- * Returns new vector with rounded components.
+ * Returns new vector with it's components rounded.
  * 
  * @param {Vector} u
  * @returns {Vector} v

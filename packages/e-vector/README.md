@@ -18,7 +18,6 @@ Install using `npm`,
 
 #### Table of Contents
 
--   [elAngle](#elangle)
 -   [Vector](#vector)
 -   [copy](#copy)
 -   [fromAngle](#fromangle)
@@ -40,19 +39,6 @@ Install using `npm`,
 -   [ceil](#ceil)
 -   [floor](#floor)
 -   [abs](#abs)
-
-### elAngle
-
-[packages/e-vector-dom/src/vector-dom.js:38-43](https://github.com/bonzaico/e-vector/blob/8f88d2df15327c11210ff7df72d7e492fdc45be3/packages/e-vector-dom/src/vector-dom.js#L38-L43 "Source code on GitHub")
-
-Find the angle between the given vector and the center of an DOM element
-
-**Parameters**
-
--   `el` **[HTMLElement](https://developer.mozilla.org/docs/Web/HTML/Element)** 
--   `v` **VectorT** 
-
-Returns **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** Angle in degrees
 
 ### Vector
 
@@ -303,7 +289,7 @@ Returns **[Vector](#vector)** The projected vector.
 
 [packages/e-vector/src/vector.js:232-232](https://github.com/bonzaico/e-vector/blob/8f88d2df15327c11210ff7df72d7e492fdc45be3/packages/e-vector/src/vector.js#L232-L232 "Source code on GitHub")
 
-Returns new vector with rounded components.
+Returns new vector with it's components rounded.
 
 **Parameters**
 

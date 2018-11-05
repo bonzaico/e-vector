@@ -25,7 +25,7 @@ const elCenter = (el: HTMLElement): VectorT => {
 export const mousePositionFromEvent = (e: MouseEvent) =>
     Vector(e.clientX, e.clientY);
 
-export const positionFromClientRect =(rect: ClientRect): VectorT =>
+export const positionFromClientRect = (rect: ClientRect): VectorT =>
     Vector(rect.left, rect.top);
 
 /**

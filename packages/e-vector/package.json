@@ -4,7 +4,11 @@
   "description": "A 2D or 3D Euclidean vector library for Node.js and the browser.",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
-  "unpkg": "dist/index/.umd.min.js",
+  "unpkg": "dist/index.umd.min.js",
+  "scripts": {
+    "test": "rollup -c ../../rollup.test.config.js | node | tap-spec",
+    "docs": "documentation readme src/vector.js -s \"API Docs\" --github --readme-file README.md"
+  },
   "files": [
     "src",
     "dist/*.js"
