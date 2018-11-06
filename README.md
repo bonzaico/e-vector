@@ -10,7 +10,7 @@ Package                                 | Version
 ----------------------------------------|---------
  **[e-vector](/packages/e-vector)** <br />Base package | [![npm](https://img.shields.io/npm/v/e-vector.svg)](https://www.npmjs.com/package/e-vector) |
 | [e-vector-dom](/packages/e-vector-dom) <br/> Some DOM helpers | [![npm](https://img.shields.io/npm/v/e-vector-dom.svg)](https://www.npmjs.com/package/e-vector-dom) |
-| [e-vector-fl](/packages/e-vector-dom) <br/> FantasyLand Bindings | [![npm](https://img.shields.io/npm/v/e-vector-fl.svg)](https://www.npmjs.com/package/e-vector-fl) |
+| [e-vector-fl](/packages/e-vector-fl) <br/> [Fantasy Land](https://github.com/fantasyland/fantasy-land) Bindings | [![npm](https://img.shields.io/npm/v/e-vector-fl.svg)](https://www.npmjs.com/package/e-vector-fl) |
 
 ## Installation
 
@@ -20,7 +20,7 @@ Install using `npm`,
 
 ## Use as ES Module
 
-    import Vector from "e-vector";
+    import * as Vector from "e-vector";
 
 ## License
 

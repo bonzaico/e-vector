@@ -1,10 +1,14 @@
 {
   "name": "e-vector-dom",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Vector utilities to work with DOM elements.",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
-  "unpkg": "dist/index/.umd.min.js",
+  "unpkg": "dist/index.umd.min.js",
+  "scripts": {
+    "build": "rollup -c ../../rollup.config.js --input src/e-vector-dom.js --name VectorDOM",
+    "docs": "documentation readme src/e-vector-dom.js -s \"API Docs\" --github --readme-file README.md"
+  },
   "files": [
     "src",
     "dist/*.js"

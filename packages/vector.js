@@ -1,7 +1,9 @@
+/* @flow */
+
 export class Vector {
-    x: number
-    y: number
-    z: number
+    x: number;
+    y: number;
+    z: number;
 
     constructor (x: number, y: number, z?: number) {
         var obj = this;

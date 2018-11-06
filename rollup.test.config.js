@@ -3,24 +3,25 @@ import resolve from "rollup-plugin-node-resolve";
 import babel from "rollup-plugin-babel";
 import flow from "rollup-plugin-flow";
 import commonjs from "rollup-plugin-commonjs";
+import builtins from "rollup-plugin-node-builtins";
+import preset from "babel-preset-es2015-rollup";
 
 export default {
-    input: "tests/vector.test.js",
     output: {
-        format: "umd",
-        name: "Vector"
+        format: "cjs"
     },
     plugins: [
         flow(),
         resolve({
-            jsnext: true,
-            browser: true,
-            main: true,
-            preferBuiltins: false
+            preferBuiltins: true
+        }),
+        babel({
+            babelrc: false,
+            presets: [["env", { modules: false }]],
+            // plugins: ["external-helpers"],
+            exclude: "node_modules/**" // only transpile our source code
         }),
         commonjs(),
-        babel({
-            exclude: "node_modules/**" // only transpile our source code
-        })
+        builtins()
     ]
 };

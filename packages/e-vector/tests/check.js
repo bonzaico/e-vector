@@ -1,4 +1,4 @@
-import jsc from "jsverify";
+import jsc from "./jsverify";
 
 function is_fn(f) {
     return typeof f === "function";

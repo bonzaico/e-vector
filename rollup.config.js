@@ -21,16 +21,13 @@ const BANNER = `/*!
 `;
 
 export default [{
-    input: "src/vector",
     output: {
         file: "dist/index.js",
         format: "umd",
-        name: "Vector",
         banner: BANNER
     },
     plugins: PLUGINS
 }, {
-    input: "src/vector",
     output: {
         file: "dist/index.esm.js",
         format: "es",
@@ -38,11 +35,9 @@ export default [{
     },
     plugins: PLUGINS
 }, {
-    input: "src/vector.js",
     output: {
         file: "dist/index.umd.min.js",
         format: "umd",
-        name: "Vector",
         banner: BANNER
     },
     plugins: PLUGINS.concat([uglify({

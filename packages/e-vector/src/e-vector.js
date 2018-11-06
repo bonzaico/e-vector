@@ -3,7 +3,14 @@
 import U from "./utils";
 import { Vector as VectorT } from "../../vector";
 
-export const RAD_TO_DEG = 360 / (2 * Math.PI);
+const {
+    PI,
+    sin, cos, atan2,
+    sqrt, pow,
+    mRound, mCeil, mFloor, mAbs
+} = Math;
+
+export const RAD_TO_DEG = 360 / (2 * PI);
 
 /**
  * Create a vector by specifying its components.
@@ -48,10 +55,10 @@ export const copy = (v: VectorT): VectorT => Vector(v.x, v.y, v.z);
  * 
  * @example 
  * 
- * var v = Vector.fromAngle(Math.atan2(4, 3));
+ * var v = Vector.fromAngle(atan2(4, 3));
  * v.toString(); // Vector(0.6, 0.8, 0)
  */
-export const fromAngle = (angle: number): VectorT => Vector(Math.cos(angle), Math.sin(angle));
+export const fromAngle = (angle: number): VectorT => Vector(cos(angle), sin(angle));
 
 /**
  * Check the equality of two vectors.
@@ -78,7 +85,7 @@ export const equals = U.curry((v: VectorT, o: VectorT): boolean => (v.x === o.x 
  * @param {Vector} v
  * @returns {number} Magnitude of the given vector.
  */
-export const mag = (v: VectorT): number => Math.sqrt(v.x * v.x + v.y * v.y + v.z * v.z);
+export const mag = (v: VectorT): number => sqrt(v.x * v.x + v.y * v.y + v.z * v.z);
 
 /**
  * Compute the square of magnitude of the vector.
@@ -137,7 +144,7 @@ export const div = U.curry(
  * @returns {number} The distance between **_`v`_** and **_`u`_**.
  */
 export const dist = U.curry((v: VectorT, o: VectorT): number =>
-    Math.sqrt(Math.pow(v.x - o.x, 2) + Math.pow(v.y - o.y, 2) + Math.pow(v.z - o.z, 2))
+    sqrt(pow(v.x - o.x, 2) + pow(v.y - o.y, 2) + pow(v.z - o.z, 2))
 );
 
 /**
@@ -188,7 +195,7 @@ export const setMag = U.curry((m: number, u: VectorT) => Vector.mul(m / Vector.m
  * @param {Vector} u 
  * @returns {number} Angle in radians
  */
-export const heading = (u: VectorT) => Math.atan2(u.y, u.x);
+export const heading = (u: VectorT) => atan2(u.y, u.x);
 
 /**
  * Returns the projection of the second vector onto the first.
@@ -213,7 +220,7 @@ export const project = U.curry((on: VectorT, v: VectorT) => Vector.mul(
  * var roundedVector = Vector.round(u);
  * console.log(roundedVector); // Vector(10, 11)
  */
-export const round = ((u: VectorT) => Vector(Math.round(u.x), Math.round(u.y), Math.round(u.z)));
+export const round = ((u: VectorT) => Vector(mRound(u.x), mRound(u.y), mRound(u.z)));
 
 /**
  * Returns new vector with the nearest non-fractional values for the components.
@@ -227,7 +234,7 @@ export const round = ((u: VectorT) => Vector(Math.round(u.x), Math.round(u.y), M
  * var ceilVector = Vector.ceil(u);
  * console.log(ceilVector); // Vector(11, 11)
  */
-export const ceil = ((u: VectorT) => Vector(Math.ceil(u.x), Math.ceil(u.y), Math.ceil(u.z)));
+export const ceil = ((u: VectorT) => Vector(mCeil(u.x), mCeil(u.y), mCeil(u.z)));
 
 /**
  * Returns new vector with the nearest smaller non-fractional values for the components.
@@ -241,7 +248,7 @@ export const ceil = ((u: VectorT) => Vector(Math.ceil(u.x), Math.ceil(u.y), Math
  * var floorVector = Vector.floor(u);
  * console.log(floorVector); // Vector(10, 10)
  */
-export const floor = ((u: VectorT) => Vector(Math.floor(u.x), Math.floor(u.y), Math.floor(u.z)));
+export const floor = ((u: VectorT) => Vector(mFloor(u.x), mFloor(u.y), mFloor(u.z)));
 
 /**
  * Returns new vector with the absolute values for the components.
@@ -255,7 +262,7 @@ export const floor = ((u: VectorT) => Vector(Math.floor(u.x), Math.floor(u.y), M
  * var absVector = Vector.abs(u);
  * console.log(absVector); // Vector(5, 10)
  */
-export const abs = ((u: VectorT) => Vector(Math.abs(u.x), Math.abs(u.y), Math.abs(u.z)));
+export const abs = ((u: VectorT) => Vector(abs(u.x), abs(u.y), abs(u.z)));
 
 export const inRectangle = U.curry((position: VectorT, size: VectorT, point: VectorT) => {
     const bottomRight = Vector.add(position, size);

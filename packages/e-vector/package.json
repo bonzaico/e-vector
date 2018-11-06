@@ -1,12 +1,13 @@
 {
   "name": "e-vector",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A 2D or 3D Euclidean vector library for Node.js and the browser.",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "unpkg": "dist/index.umd.min.js",
   "scripts": {
-    "test": "rollup -c ../../rollup.test.config.js | node | tap-spec",
+    "build": "rollup -c ../../rollup.config.js --input src/e-vector.js --name Vector",
+    "test": "rollup -c ../../rollup.test.config.js -i tests/vector.test.js | node | tap-spec",
     "docs": "documentation readme src/e-vector.js -s \"API Docs\" --github --readme-file README.md"
   },
   "files": [

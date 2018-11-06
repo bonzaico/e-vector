@@ -1,5 +1,5 @@
 import { test } from "tape";
-import jsc from "jsverify";
+import jsc from "./jsverify";
 import { allPass, propEq, equals, repeat } from "ramda";
 
 import { check, checkForAll } from "./check";
@@ -67,7 +67,7 @@ test("Vector Laws", t => {
     test("Vector addition with negation yields zero vector", t => {
         checkForAll(t, repeat("number", 3), (ax, ay, az) => {
             const a = V.Vector(ax, ay, az);
-            const negA = V.mult(-1, a);
+            const negA = V.mul(-1, a);
             const s = V.add(a, negA);
 
             return equals(s.x, 0) && equals(s.y, 0) && equals(s.z, 0);
