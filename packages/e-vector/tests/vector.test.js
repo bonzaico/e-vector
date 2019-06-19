@@ -1,8 +1,7 @@
 import { test } from "tape";
-import jsc from "./jsverify";
 import { allPass, propEq, equals, repeat } from "ramda";
-
-import { check, checkForAll } from "./check";
+import jsc from "../../jsverify";
+import { check, checkForAll } from "../../check";
 import * as V from "../src/e-vector";
 
 const isCloseTo = (x, y, epsilon = 0.001) => (Math.abs(x - y) < epsilon);

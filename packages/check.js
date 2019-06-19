@@ -14,12 +14,13 @@ function opt(x, o, prop, def) {
 }
 
 // prop : jsverify property, t : {pass, fail}
-export function check(t, prop) {
-    const r = jsc.check(prop, { quiet: true });
-    if (r === true) t.pass("property holds");
+export function check(t, prop, msg) {
+    const r = jsc.check(prop, { quiet: false });
+    if (r === true) t.pass(msg || "property holds");
     else t.fail("property does not hold! found counter example: " + r.counterexamplestr);
 }
 
-export function checkForAll(t, generators, fn) {
-    check(t, jsc.forall.apply(jsc, generators.concat(fn)));
+export function checkForAll(t, generators, fn, msg) {
+    const prop = jsc.forall.apply(jsc, generators.concat([fn]));
+    check(t, prop, msg);
 }

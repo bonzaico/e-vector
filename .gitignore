@@ -1,4 +1,6 @@
 node_modules/
 docs/
 dist/
-*.log
+*.log.cfg
+.cfg
+lerna-debug.log

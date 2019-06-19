@@ -38,15 +38,11 @@ export class Vector extends Vec {
         return V.equals(this, b);
     }
 
-    lte(v: Vector) {
-        if (!(v instanceof Vector)) return false;
+    // lte(v: Vector) {
+    //     if (!(v instanceof Vector)) return false;
 
-        if (this.x <= v.x) return true;
-        if (this.y <= v.y) return true;
-        if (this.z <= v.z) return true;
-
-        return false;
-    }
+    //     return (this.x <= v.x && this.y <= v.y && this.z <= v.z);
+    // }
 
     map(f: (m: number) => number) {
         return new Vector(f(this.x), f(this.y), f(this.z));
@@ -118,7 +114,10 @@ export class Vector extends Vec {
     }
 }
 
-Vector.of = (x, y, z) => new Vector(x, y, z);
+Vector.of = (x, y, z) => {
+    if (x != null && y != null && z != null) return new Vector(x, y, z);
+    else return new Vector(x, x, x);
+}
 Vector.fromAngle = V.fromAngle;
 
 Vector[fl.of] = Vector.of;

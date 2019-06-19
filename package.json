@@ -16,6 +16,7 @@
     "documentation": "^6.3.3",
     "eslint": "^4.19.1",
     "eslint-config-bonzai": "^1.0.0",
+    "fantasy-laws": "^1.2.0",
     "flow-bin": "^0.72.0",
     "jsverify": "^0.8.3",
     "lerna": "^2.11.0",

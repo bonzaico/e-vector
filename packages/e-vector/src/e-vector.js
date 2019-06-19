@@ -10,6 +10,8 @@ const {
     mRound, mCeil, mFloor, mAbs
 } = Math;
 
+export const approxEq = (v1, v2, epsilon = 0.001) => Math.abs(v1 - v2) < epsilon;
+
 export const RAD_TO_DEG = 360 / (2 * PI);
 
 /**
@@ -77,7 +79,9 @@ export const fromAngle = (angle: number): VectorT => Vector(cos(angle), sin(angl
  * Vector.equals(u, w); // true
  * u === w; // false
  */
-export const equals = U.curry((v: VectorT, o: VectorT): boolean => (v.x === o.x && v.y === o.y && v.z === o.z));
+export const equals = U.curry((v: VectorT, o: VectorT): boolean => (
+    approxEq(v.x, o.x) && approxEq(v.y, o.y) && approxEq(v.z, o.z)
+));
 
 /**
  * Compute the magnitude of the vector.

@@ -7,7 +7,7 @@ This is a wrapper for e-vector which adds [Fantasy Land](https://github.com/fant
 `Vector a` satisfies the following Fantasy Land specifications:
 
 - [Setoid](https://github.com/fantasyland/fantasy-land#setoid)
-- [Ord](https://github.com/fantasyland/fantasy-land#ord)
+<!-- - [Ord](https://github.com/fantasyland/fantasy-land#ord) -->
 - [Functor](https://github.com/fantasyland/fantasy-land#functor)
 - [Apply](https://github.com/fantasyland/fantasy-land#apply)
 - [Applicative](https://github.com/fantasyland/fantasy-land#applicative)
