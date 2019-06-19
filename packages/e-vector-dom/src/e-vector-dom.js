@@ -1,12 +1,13 @@
 /* @flow */
 
-import * as V from "e-vector";
-import type VectorT from "e-vector";
+import * as V from "../../e-vector/src/e-vector";
+
+import type { VectorT } from "../../e-vector/src/e-vector";
 
 /**
  * Get center of an HTML element as a Vector, relative to the viewport.
- * 
- * @param {HTMLElement} el 
+ *
+ * @param {HTMLElement} el
  * @returns {Vector}
  */
 const elCenter = (el: HTMLElement): VectorT => {
@@ -33,9 +34,9 @@ const elCenter = (el: HTMLElement): VectorT => {
  *
  * @param {MouseEvent} e Event object
  * @returns {Vector}
- * 
- * @example 
- * 
+ *
+ * @example
+ *
  * el.addEventListener("mousedown", e => {
  *     const position = Vector.mousePositionFromEvent(e);
  * });
@@ -46,11 +47,11 @@ export const mousePositionFromEvent = (e: MouseEvent) =>
 /**
  * Create a vector for the position of a client rectangle.
  *
- * @param {ClientRect} rect 
+ * @param {ClientRect} rect
  * @returns {Vector}
- * 
- * @example 
- * 
+ *
+ * @example
+ *
  * const position = Vector.positionFromClientRect(el.getBoundingClientRect());
  */
 export const positionFromClientRect = (rect: ClientRect): VectorT =>
@@ -66,6 +67,6 @@ export const positionFromClientRect = (rect: ClientRect): VectorT =>
 export const elAngle = (el: HTMLElement, v: VectorT): number =>
     [el]
         .map(elCenter)
-        .map(V.subtract(v))
+        .map(V.sub(v))
         .map(V.heading)
         .reduce((_, x) => x);

@@ -3,12 +3,7 @@
 import { Vector as VectorT } from "../../vector";
 import U from "./utils";
 
-const {
-    PI,
-    sin, cos, atan2,
-    sqrt, pow,
-    mRound, mCeil, mFloor, mAbs
-} = Math;
+const { PI, sin, cos, atan2, sqrt, pow, mRound, mCeil, mFloor } = Math;
 
 export const approxEq = (v1, v2, epsilon = 0.001) => Math.abs(v1 - v2) < epsilon;
 
@@ -32,7 +27,7 @@ export const Vector = (function () {
     return (x: number, y: number, z?: number) => {
         return new VectorT(x, y, z);
     };
-}());
+})();
 
 /**
  * Create a copy of the given vector.
@@ -79,9 +74,10 @@ export const fromAngle = (angle: number): VectorT => Vector(cos(angle), sin(angl
  * Vector.equals(u, w); // true
  * u === w; // false
  */
-export const equals = U.curry((v: VectorT, o: VectorT): boolean => (
-    approxEq(v.x, o.x) && approxEq(v.y, o.y) && approxEq(v.z, o.z)
-));
+export const equals = U.curry(
+    (v: VectorT, o: VectorT): boolean =>
+        approxEq(v.x, o.x) && approxEq(v.y, o.y) && approxEq(v.z, o.z)
+);
 
 /**
  * Compute the magnitude of the vector.
@@ -97,7 +93,7 @@ export const mag = (v: VectorT): number => sqrt(v.x * v.x + v.y * v.y + v.z * v.
  * @param {Vector} v
  * @returns {number} Square of magnitude of the given vector.
  */
-export const magSq = (v: VectorT): number => (v.x * v.x + v.y * v.y + v.z * v.z);
+export const magSq = (v: VectorT): number => v.x * v.x + v.y * v.y + v.z * v.z;
 
 /**
  * Add two vectors.
@@ -106,7 +102,9 @@ export const magSq = (v: VectorT): number => (v.x * v.x + v.y * v.y + v.z * v.z)
  * @param {Vector} u
  * @returns {Vector} Resultant vector.
  */
-export const add = U.curry((v: VectorT, o: VectorT): VectorT => Vector(v.x + o.x, v.y + o.y, v.z + o.z));
+export const add = U.curry(
+    (v: VectorT, o: VectorT): VectorT => Vector(v.x + o.x, v.y + o.y, v.z + o.z)
+);
 
 /**
  * Subtract the second vector from the first.
@@ -115,8 +113,8 @@ export const add = U.curry((v: VectorT, o: VectorT): VectorT => Vector(v.x + o.x
  * @param {Vector} u
  * @returns {Vector} Vector result of **_`v`_** `-` **_`u`_**.
  */
-export const sub = U.curry((v: VectorT, o: VectorT): VectorT =>
-    Vector(v.x - o.x, v.y - o.y, v.z - o.z)
+export const sub = U.curry(
+    (v: VectorT, o: VectorT): VectorT => Vector(v.x - o.x, v.y - o.y, v.z - o.z)
 );
 
 /**
@@ -126,7 +124,9 @@ export const sub = U.curry((v: VectorT, o: VectorT): VectorT =>
  * @param {Vector} v The vector
  * @returns {Vector} The resultant vector.
  */
-export const mul = U.curry((n: number, v: VectorT): VectorT => Vector(v.x * n, v.y * n, v.z * n));
+export const mul = U.curry(
+    (n: number, v: VectorT): VectorT => Vector(v.x * n, v.y * n, v.z * n)
+);
 
 /**
  * Divide the vector with a scalar.
@@ -147,8 +147,9 @@ export const div = U.curry(
  * @param {Vector} u
  * @returns {number} The distance between **_`v`_** and **_`u`_**.
  */
-export const dist = U.curry((v: VectorT, o: VectorT): number =>
-    sqrt(pow(v.x - o.x, 2) + pow(v.y - o.y, 2) + pow(v.z - o.z, 2))
+export const dist = U.curry(
+    (v: VectorT, o: VectorT): number =>
+        sqrt(pow(v.x - o.x, 2) + pow(v.y - o.y, 2) + pow(v.z - o.z, 2))
 );
 
 /**
@@ -170,11 +171,8 @@ export const dot = U.curry((v: VectorT, o: VectorT) => v.x * o.x + v.y * o.y + v
  * @returns {Vector} The result of **_`u`_** `×` **_`v`_**.
  */
 export const cross = U.curry((v: VectorT, o: VectorT) =>
-    Vector(
-        v.y * o.z - v.z * o.y,
-        v.x * o.z - v.z * o.x,
-        v.x * o.y - v.y * o.x
-    ));
+    Vector(v.y * o.z - v.z * o.y, v.x * o.z - v.z * o.x, v.x * o.y - v.y * o.x)
+);
 
 /**
  * Change the magnitude/length of the vector to 1 without changing its angle/direction.
@@ -191,7 +189,9 @@ export const normalize = (u: VectorT) => Vector.div(Vector.mag(u), u);
  * @param {Vector} u The vector
  * @returns {Vector} A new vector with magnitude of m and direction same as **_`u`_**.
  */
-export const setMag = U.curry((m: number, u: VectorT) => Vector.mul(m / Vector.mag(u), u));
+export const setMag = U.curry((m: number, u: VectorT) =>
+    Vector.mul(m / Vector.mag(u), u)
+);
 
 /**
  * Compute the direction/angle of the vector in radians.
@@ -208,9 +208,9 @@ export const heading = (u: VectorT) => atan2(u.y, u.x);
  * @params {Vector} v Project this vector.
  * @returns {Vector} The projected vector.
  */
-export const project = U.curry((on: VectorT, v: VectorT) => Vector.mul(
-    Vector.dot(on, v) / Vector.magSq(on)
-));
+export const project = U.curry((on: VectorT, v: VectorT) =>
+    Vector.mul(Vector.dot(on, v) / Vector.magSq(on))
+);
 
 /**
  * Returns new vector with it's components rounded.

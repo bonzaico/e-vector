@@ -8,7 +8,8 @@
   },
   "scripts": {
     "build": "rollup -c ../../rollup.config.js --input src/e-vector-fl.js --name Vector",
-    "test": "rollup -c ../../rollup.test.config.js -i tests/e-vector-fl-test.js | node | tap-spec"
+    "test": "rollup -c ../../rollup.test.config.js -i tests/e-vector-fl-test.js | node | tap-spec",
+    "lint": "eslint src/ tests/e-vector-fl.js"
   },
   "repository": {
     "type": "git",

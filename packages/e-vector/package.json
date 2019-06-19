@@ -23,5 +23,9 @@
   "repository": {
     "type": "git",
     "url": "git://github.com/bonzaico/e-vector.git"
+  },
+  "devDependencies": {
+    "ramda": "^0.26.1",
+    "tape": "^4.10.2"
   }
 }

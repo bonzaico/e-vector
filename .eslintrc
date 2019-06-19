@@ -1,6 +1,9 @@
 {
     "extends": [
-        "eslint-config-bonzai",
-        "eslint-config-bonzai/flow"
-    ]
+        "eslint-config-bonzai"
+    ],
+    "rules": {
+        "fp/no-nil": ["ignore"],
+        "max-params": ["error", 9]
+    }
 }

@@ -3,30 +3,29 @@
 import * as V from "../../e-vector/src/e-vector";
 import { Vector as Vec } from "../../vector";
 
-// TODO Should use fantasy-land package.
-var fl = {
-    equals: 'fantasy-land/equals',
-    lte: 'fantasy-land/lte',
-    compose: 'fantasy-land/compose',
-    id: 'fantasy-land/id',
-    concat: 'fantasy-land/concat',
-    empty: 'fantasy-land/empty',
-    invert: 'fantasy-land/invert',
-    filter: 'fantasy-land/filter',
-    map: 'fantasy-land/map',
-    contramap: 'fantasy-land/contramap',
-    ap: 'fantasy-land/ap',
-    of: 'fantasy-land/of',
-    alt: 'fantasy-land/alt',
-    zero: 'fantasy-land/zero',
-    reduce: 'fantasy-land/reduce',
-    traverse: 'fantasy-land/traverse',
-    chain: 'fantasy-land/chain',
-    chainRec: 'fantasy-land/chainRec',
-    extend: 'fantasy-land/extend',
-    extract: 'fantasy-land/extract',
-    bimap: 'fantasy-land/bimap',
-    promap: 'fantasy-land/promap'
+const FL = {
+    equals: "fantasy-land/equals",
+    lte: "fantasy-land/lte",
+    compose: "fantasy-land/compose",
+    id: "fantasy-land/id",
+    concat: "fantasy-land/concat",
+    empty: "fantasy-land/empty",
+    invert: "fantasy-land/invert",
+    filter: "fantasy-land/filter",
+    map: "fantasy-land/map",
+    contramap: "fantasy-land/contramap",
+    ap: "fantasy-land/ap",
+    of: "fantasy-land/of",
+    alt: "fantasy-land/alt",
+    zero: "fantasy-land/zero",
+    reduce: "fantasy-land/reduce",
+    traverse: "fantasy-land/traverse",
+    chain: "fantasy-land/chain",
+    chainRec: "fantasy-land/chainRec",
+    extend: "fantasy-land/extend",
+    extract: "fantasy-land/extract",
+    bimap: "fantasy-land/bimap",
+    promap: "fantasy-land/promap"
 };
 
 export class Vector extends Vec {
@@ -116,16 +115,16 @@ export class Vector extends Vec {
 
 Vector.of = (x, y, z) => {
     if (x != null && y != null && z != null) return new Vector(x, y, z);
-    else return new Vector(x, x, x);
-}
+    return new Vector(x, x, x);
+};
 Vector.fromAngle = V.fromAngle;
 
-Vector[fl.of] = Vector.of;
+Vector[FL.of] = Vector.of;
 
 Vector.prototype = Object.assign(Vector.prototype, {
-    [fl.equals]: Vector.prototype.equals,
-    [fl.lte]: Vector.prototype.lte,
-    [fl.map]: Vector.prototype.map,
-    [fl.ap]: Vector.prototype.ap,
-    [fl.chain]: Vector.prototype.chain
+    [FL.equals]: Vector.prototype.equals,
+    [FL.lte]: Vector.prototype.lte,
+    [FL.map]: Vector.prototype.map,
+    [FL.ap]: Vector.prototype.ap,
+    [FL.chain]: Vector.prototype.chain
 });

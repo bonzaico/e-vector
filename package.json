@@ -15,7 +15,7 @@
     "daggy": "^1.2.0",
     "documentation": "^6.3.3",
     "eslint": "^4.19.1",
-    "eslint-config-bonzai": "^1.0.3",
+    "eslint-config-bonzai": "^1.0.5",
     "fantasy-laws": "^1.2.0",
     "flow-bin": "^0.72.0",
     "jsverify": "^0.8.3",
@@ -28,6 +28,7 @@
     "rollup-plugin-node-builtins": "^2.1.2",
     "rollup-plugin-node-resolve": "^3.3.0",
     "rollup-plugin-uglify": "^3.0.0",
+    "semantic-release": "^15.13.16",
     "tap-spec": "^5.0.0",
     "tape": "^4.9.0"
   }

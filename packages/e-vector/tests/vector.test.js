@@ -8,7 +8,7 @@ const isCloseTo = (x, y, epsilon = 0.001) => (Math.abs(x - y) < epsilon);
 
 test("Vector constructor should create object with x, y & z properties", (t) => {
     check(t, jsc.forall("number", "number", "number", (x, y, z) => {
-        var v = V.Vector(x, y, z);
+        let v = V.Vector(x, y, z);
         return v.x === x && v.y === y && v.z === z;
     }));
     t.end();
@@ -16,7 +16,7 @@ test("Vector constructor should create object with x, y & z properties", (t) => 
 
 test("If z is not passed to Vector constructor, then it should be set to zero", (t) => {
     check(t, jsc.forall("number", "number", (x, y) => {
-        var v = V.Vector(x, y);
+        let v = V.Vector(x, y);
         return v.x === x && v.y === y && v.z === 0;
     }));
     t.end();
