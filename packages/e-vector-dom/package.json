@@ -1,6 +1,6 @@
 {
   "name": "e-vector-dom",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Vector utilities to work with DOM elements.",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",

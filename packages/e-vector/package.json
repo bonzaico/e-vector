@@ -1,6 +1,6 @@
 {
   "name": "e-vector",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A 2D or 3D Euclidean vector library for Node.js and the browser.",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
