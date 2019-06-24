@@ -4,7 +4,7 @@
     "build": "lerna run build",
     "lint": "lerna run lint",
     "test": "lerna run test",
-    "release": "lerna run release"
+    "release": "lerna publish"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
