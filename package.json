@@ -3,7 +3,8 @@
   "scripts": {
     "build": "lerna run build",
     "lint": "lerna run lint",
-    "test": "lerna run test"
+    "test": "lerna run test",
+    "release": "lerna run release"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -30,6 +31,7 @@
     "rollup-plugin-uglify": "^3.0.0",
     "semantic-release": "^15.13.16",
     "tap-spec": "^5.0.0",
-    "tape": "^4.9.0"
+    "tape": "^4.9.0",
+    "unleash": "^2.0.1"
   }
 }

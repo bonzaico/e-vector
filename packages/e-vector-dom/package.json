@@ -8,7 +8,8 @@
   "scripts": {
     "build": "rollup -c ../../rollup.config.js --input src/e-vector-dom.js --name VectorDOM",
     "docs": "documentation readme src/e-vector-dom.js -s \"API Docs\" --github --readme-file README.md",
-    "lint": "eslint src/ tests/"
+    "lint": "eslint src/ tests/",
+    "release": "semantic-release"
   },
   "files": [
     "src",

@@ -9,7 +9,8 @@
     "build": "rollup -c ../../rollup.config.js --input src/e-vector.js --name Vector",
     "test": "rollup -c ../../rollup.test.config.js -i tests/vector.test.js | node | tap-spec",
     "docs": "documentation readme src/e-vector.js -s \"API Docs\" --github --readme-file README.md",
-    "lint": "eslint src/e-vector.js tests/"
+    "lint": "eslint src/e-vector.js tests/",
+    "release": "semantic-release"
   },
   "files": [
     "src",
